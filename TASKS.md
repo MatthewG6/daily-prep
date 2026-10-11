@@ -34,7 +34,7 @@
 - [x] Provide dish-specific measured sauces, prep, cooking, and finishing instructions; preserve the original 160 IDs and existing local records.
 - [x] Add cuisine browsing and quick hibachi/Japanese collections, plus onboarding options.
 - [x] Run tests/build and verify phone recipe/planner/grocery flows.
-- [ ] Publish the update and verify the live deployment.
+- [x] Publish the update and verify the live deployment.
 
 ## Verification record
 - TDD: initial model stubs failed 9 behavioral tests; implemented preference filtering/ranking, portion scaling, compatible-unit aggregation, calendar arithmetic, planning, validated storage, and backup round-trip. Added failing regressions for tomato/onion forms, permanently clearing stale shopping checks, and service-worker cache isolation; each now passes.
@@ -52,3 +52,7 @@
 - TDD: all four new acceptance tests failed before implementation (160 rather than 400 records, missing cuisine ranking, missing hibachi recipes, and missing specialty ingredients). All 17 tests now pass. The production build validates 400 distinct recipe records and precaches 16 local assets.
 - Browser at 390px: applying the service-worker update retained previous preferences, favorites, two planned meals, shopping records, and the existing personal recipe. New Japanese and Hibachi onboarding choices saved and changed the featured meal to hibachi chicken fried rice. Quick Hibachi matched 36 recipes; Japanese matched 108 including hibachi; Thai selector matched 30. Search found the single yum yum steak bowl.
 - Recipe detail showed measured cold yum yum sauce, whole-steak searing/rest instructions, and numbered cooking steps without dialog overflow. Chicken fried rice scaled to 3 servings (4½ cups cooked rice, 1⅛ lb chicken), and planning it for Monday preserved both older black-bean meals. Groceries showed cooked rice 4½ cups and dry rice 1½ cups as separate ingredients, plus 3 tbsp tamari.
+- Offline browser: with the preview server stopped, Daily Prep reloaded, filtered the full hibachi collection, and opened the new chicken fried rice recipe with eggs and all seven steps. The new catalog module is included in the offline precache.
+- GitHub Actions run 38118565244 successfully tested, built, and deployed commit 1637638. The live app offered its update and rendered the new Japanese/Hibachi/Chinese/Korean/Thai/Vietnamese onboarding choices. Physical phone cooking/installation remains user verification.
+- Phone screenshot review caught the cuisine selector collapsing to an arrow due to an older first-child flex rule. Overrode that rule; on narrow screens the cuisine selector gets its own full-width row above category/time controls.
+- Corrected 390px picker width verified at 350px with no page overflow. Phone screenshot shows the full Hibachi label, cuisine chips, result count, and new recipe cards.
