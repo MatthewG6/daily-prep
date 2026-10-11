@@ -1,6 +1,6 @@
 # Daily Prep
 
-A standalone phone PWA with 160 original built-in recipes, taste onboarding, a weekly meal planner, and a combined grocery list. A sister to Daily Fuel and Daily Water.
+A standalone phone PWA with 400 original built-in recipes, taste onboarding, a weekly meal planner, and a combined grocery list. A sister to Daily Fuel and Daily Water.
 
 App URL: https://matthewg6.github.io/daily-prep/
 
@@ -19,7 +19,7 @@ Open the printed local URL. Rebuild after changing source. The production workfl
 ## Included
 
 - Four-step onboarding for preferred ingredients, cuisines, dietary exclusions, cooking time, and default servings.
-- 160 original recipes in 16 categories; all included offline. Saved favorites, search, and filters.
+- 400 original recipes in 16 categories, including 240 Asian additions across 40 dishes with six protein options per dish. Includes 36 hibachi, 72 Japanese, 36 Chinese, 36 Korean, 30 Thai, and 30 Vietnamese recipes; all included offline. Saved favorites, search, cuisine/category/time filters, and quick hibachi/Japanese collections.
 - Full ingredients, scaled servings, and numbered cooking methods.
 - Weekly breakfast/lunch/dinner plans; quantities update the grocery list automatically.
 - Groceries grouped by department, shopping checks, already-owned ingredients, and manual extras.

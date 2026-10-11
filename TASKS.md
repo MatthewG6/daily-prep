@@ -28,6 +28,14 @@
 - [x] Publish separate MatthewG6/daily-prep repository and verify GitHub Pages deployment.
 - [ ] Physical iPhone installation and day-to-day use (user verification).
 
+## Asian food expansion
+- [x] Record failing acceptance tests for a 400-recipe library, cuisine ranking, legacy saves, hibachi directions, and specialty ingredient metadata.
+- [x] Add 240 original recipes across 40 dishes, each with six protein options: 36 hibachi, 72 Japanese, 36 Chinese, 36 Korean, 30 Thai, 30 Vietnamese.
+- [x] Provide dish-specific measured sauces, prep, cooking, and finishing instructions; preserve the original 160 IDs and existing local records.
+- [x] Add cuisine browsing and quick hibachi/Japanese collections, plus onboarding options.
+- [x] Run tests/build and verify phone recipe/planner/grocery flows.
+- [ ] Publish the update and verify the live deployment.
+
 ## Verification record
 - TDD: initial model stubs failed 9 behavioral tests; implemented preference filtering/ranking, portion scaling, compatible-unit aggregation, calendar arithmetic, planning, validated storage, and backup round-trip. Added failing regressions for tomato/onion forms, permanently clearing stale shopping checks, and service-worker cache isolation; each now passes.
 - 13 automated tests pass. Static production build validates all 160 recipe records and precaches 15 local assets, including the full catalog and bundled fonts. No runtime package or remote recipe dependencies.
@@ -39,3 +47,8 @@
 - Repository: https://github.com/MatthewG6/daily-prep. Published app: https://matthewg6.github.io/daily-prep/.
 - GitHub Actions run 38117607011 successfully ran tests, built, and deployed commit 9f12791. The public URL returned HTTP 200 over HTTPS, and the live app rendered its first-run onboarding. Live 390px DOM width matched scroll width; no console errors. Screenshot captured at /private/tmp/daily-prep-live-onboarding.png. Preview servers stopped and temporary viewport reset.
 - Daily Fuel source and deployment remained unchanged (e31d834). Daily Prep lives in its own nested checkout, with independent storage and service-worker scope.
+
+## Expansion verification
+- TDD: all four new acceptance tests failed before implementation (160 rather than 400 records, missing cuisine ranking, missing hibachi recipes, and missing specialty ingredients). All 17 tests now pass. The production build validates 400 distinct recipe records and precaches 16 local assets.
+- Browser at 390px: applying the service-worker update retained previous preferences, favorites, two planned meals, shopping records, and the existing personal recipe. New Japanese and Hibachi onboarding choices saved and changed the featured meal to hibachi chicken fried rice. Quick Hibachi matched 36 recipes; Japanese matched 108 including hibachi; Thai selector matched 30. Search found the single yum yum steak bowl.
+- Recipe detail showed measured cold yum yum sauce, whole-steak searing/rest instructions, and numbered cooking steps without dialog overflow. Chicken fried rice scaled to 3 servings (4½ cups cooked rice, 1⅛ lb chicken), and planning it for Monday preserved both older black-bean meals. Groceries showed cooked rice 4½ cups and dry rice 1½ cups as separate ingredients, plus 3 tbsp tamari.

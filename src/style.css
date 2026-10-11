@@ -19,3 +19,11 @@ dialog{width:min(640px,calc(100% - 24px));max-height:90dvh;padding:28px;border:1
 @media(max-width:350px){.shell{padding-left:14px;padding-right:14px}.feature-card{padding:21px 17px;grid-template-columns:1.25fr .75fr}.feature-art{width:148px;margin-left:-10px}.feature-copy h2{font-size:27px}.meal-tabs button{padding:9px 9px}.recipe-copy{padding:12px 10px}.intro h1{font-size:39px}.nav-item{min-width:62px;padding:9px 11px}.card-art{height:112px}.week-control>span{min-width:123px}.plan-summary{gap:19px;padding:20px 17px}.plan-summary>.text-button{font-size:9px}.local-tag{font-size:8px}.onboarding h1{font-size:36px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 .search-box input[type="search"]{background:none;border:0;min-height:49px;margin:0;padding:12px 0;font-size:16px;border-radius:0}
+
+/* Cuisine collections remain reachable on narrow phone screens. */
+.cuisine-picks{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+.cuisine-picks button{min-height:44px;padding:10px 14px;border-radius:12px;background:#17253e;border:1px solid #344a70;color:#bdd1ef;font-size:12px}
+.cuisine-picks .selected{background:linear-gradient(115deg,#215ce0,#7134bd);border-color:#7475ed;color:#fff}
+.cuisine-picks button[data-value="Hibachi"]{border-color:#bf579a;color:#ffa2d6}
+.cuisine-picks button[data-value="Hibachi"].selected{background:linear-gradient(115deg,#943fa6,#cf3d86);color:#fff}
+.select-filters{flex-wrap:wrap}.select-filters label{flex:1 1 125px;min-width:0}.select-filters select{width:100%;max-width:100%;font-size:16px;padding-left:10px;padding-right:22px}

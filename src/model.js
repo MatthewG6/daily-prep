@@ -73,8 +73,11 @@ export function eligible(recipe,p){
   const avoided=new Set(p.avoid.flatMap(id=>forms[id]||[id]));
   return !recipe.ingredients.some(i=>avoided.has(i.id));
 }
+export function cuisineMatches(actual,selected){
+  return actual===selected||(selected==='Asian'&&['Japanese','Hibachi','Chinese','Korean','Thai','Vietnamese','Indian'].includes(actual))||(selected==='Japanese'&&actual==='Hibachi');
+}
 export function recommend(list,p){
-  const score=r=>r.proteins.filter(v=>p.proteins.includes(v)).length*5+(p.cuisines.includes(r.cuisine)?8:0);
+  const score=r=>r.proteins.filter(v=>p.proteins.includes(v)).length*5+(p.cuisines.includes(r.cuisine)?8:p.cuisines.some(c=>cuisineMatches(r.cuisine,c))?6:0);
   return list.filter(r=>eligible(r,p)).sort((a,b)=>score(b)-score(a));
 }
 export function scaleIngredients(recipe,count){

@@ -1,5 +1,6 @@
+import {buildAsianRecipes} from './asian-recipes.js';
 export const allergens = ['gluten','milk','egg','soy','peanut','tree-nut','fish','shellfish','sesame'];
-export const cuisines = ['American','Mexican','Mediterranean','Italian','Asian','Indian'];
+export const cuisines = ['American','Mexican','Mediterranean','Italian','Asian','Japanese','Hibachi','Chinese','Korean','Thai','Vietnamese','Indian'];
 export const proteinOptions = ['chicken','turkey','beef','fish','seafood','tofu','beans','eggs','dairy'];
 export const departments = ['Produce','Meat & seafood','Dairy & eggs','Bakery','Pantry','Frozen'];
 
@@ -71,6 +72,23 @@ export const ingredients = {
   'tomato-paste':I('Tomato paste'), broth:I('Vegetable broth'),
   olive:I('Pitted olives'), pickle:I('Pickles','Produce'), hummus:I('Hummus','Dairy & eggs',['sesame']),
   'hot-sauce':I('Hot sauce'), water:I('Water'),
+  steak:I('Sirloin steak','Meat & seafood',[],{...meat,protein:'beef'}),
+  udon:I('Dry wheat udon noodles','Pantry',['gluten']),
+  soba:I('Dry wheat-blend soba noodles','Pantry',['gluten']),
+  ramen:I('Plain dry ramen noodles (no seasoning packet)','Pantry',['gluten']),
+  'glass-noodles':I('Dry sweet-potato glass noodles'),
+  miso:I('Rice-based miso paste','Pantry',['soy']),
+  nori:I('Nori sheets'),
+  mayonnaise:I('Mayonnaise','Pantry',['egg'],{vegan:false}),
+  sugar:I('Sugar'), cornstarch:I('Cornstarch'),
+  'neutral-oil':I('Neutral cooking oil'),
+  'fish-sauce':I('Fish sauce','Pantry',['fish'],meat),
+  gochujang:I('Gochujang paste (wheat-containing)','Pantry',['soy','gluten']),
+  'red-curry-paste':I('Vegan Thai red curry paste (no shrimp paste)'),
+  lemongrass:I('Lemongrass stalk','Produce'),
+  'bok-choy':I('Bok choy','Produce'), 'snow-pea':I('Snow peas','Produce'),
+  'bean-sprout':I('Bean sprouts','Produce'), radish:I('Radishes','Produce'),
+  'five-spice':I('Chinese five-spice powder'),
 };
 
 export const avoidOptions = ['mushroom','onion','garlic','avocado','cucumber','tomato','pepper','broccoli','spinach','cilantro','olive','banana'];
@@ -389,4 +407,4 @@ add('burgers',[
   ['Turkey apple mustard burger','American','turkey','apple|1|each;mustard|1|tbsp;yogurt|0.25|cup;paprika|0.5|tsp'],
 ]);
 
-export const recipes = built;
+export const recipes = [...built,...buildAsianRecipes(ingredients)];

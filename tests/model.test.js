@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { recipes, ingredients, allergens } from '../src/catalog.js';
 import { emptyState, validateState, readState, writeState, validateRecipe, eligible, recommend, scaleIngredients, groceryList, groceryKey, groceryStatus, formatQuantity, weekDates, shiftDate, savePlan } from '../src/model.js';
 
-test('built-in library has 160 complete, distinct recipes and accurate ingredient metadata', () => {
-  assert.ok(recipes.length >= 160);
+test('built-in library has 400 complete, distinct recipes and accurate ingredient metadata', () => {
+  assert.ok(recipes.length >= 400);
   assert.equal(new Set(recipes.map(r => r.id)).size, recipes.length);
   assert.equal(new Set(recipes.map(r => r.name)).size, recipes.length);
   assert.equal(new Set(recipes.map(r => JSON.stringify(r.ingredients.map(i => [i.id,i.quantity,i.unit]).sort()))).size, recipes.length);
