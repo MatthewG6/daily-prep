@@ -1,0 +1,8 @@
+{
+  "name": "daily-prep",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A phone-first recipe library, meal planner, and grocery list."
+, "scripts": {"test": "node --test tests/*.test.js", "build": "node scripts/build.mjs", "dev": "node scripts/server.mjs", "preview": "node scripts/server.mjs dist"}
+}
