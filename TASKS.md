@@ -25,7 +25,7 @@
 - [x] Core tests and production build pass.
 - [x] Browser: onboarding, preferences, recipe scaling, favorites, planning, grocery arithmetic, custom recipe, backup/reload.
 - [x] Browser: narrow viewport, accessibility, no overflow, service-worker/offline verification.
-- [ ] Publish separate MatthewG6/daily-prep repository and verify GitHub Pages deployment.
+- [x] Publish separate MatthewG6/daily-prep repository and verify GitHub Pages deployment.
 - [ ] Physical iPhone installation and day-to-day use (user verification).
 
 ## Verification record
@@ -36,4 +36,6 @@
 - Browser: shopping checks, owned salt, a coffee extra, and a personal recipe survived backup export/restore and reload. A personal recipe containing literal HTML characters rendered as text. Changing Monday to 4 servings recalculated rice to 1½ cups and reset checked/owned states whose quantities changed.
 - Browser: narrow 320px/390px layouts had no horizontal overflow; Tab from search focused the All filter. Console showed no app errors during the online flows. Physical iPhone installation remains for user verification.
 - Offline test initially exposed an old Daily Water HTML cache at the reused localhost address. Added a failing cache-isolation regression and scoped navigation/asset reads to the active Daily Prep cache; automated regression passes. With the preview server stopped, the browser successfully reloaded Daily Prep, opened saved plans, and generated the correct grocery list. Preview server stopped after verification.
-- Repository created: https://github.com/MatthewG6/daily-prep. GitHub Pages configured for Actions; deployment pending.
+- Repository: https://github.com/MatthewG6/daily-prep. Published app: https://matthewg6.github.io/daily-prep/.
+- GitHub Actions run 38117607011 successfully ran tests, built, and deployed commit 9f12791. The public URL returned HTTP 200 over HTTPS, and the live app rendered its first-run onboarding. Live 390px DOM width matched scroll width; no console errors. Screenshot captured at /private/tmp/daily-prep-live-onboarding.png. Preview servers stopped and temporary viewport reset.
+- Daily Fuel source and deployment remained unchanged (e31d834). Daily Prep lives in its own nested checkout, with independent storage and service-worker scope.
